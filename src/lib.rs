@@ -49,7 +49,7 @@ pub struct Endpoint<T> {
 }
 
 impl<T: Send> Endpoint<T> {
-  pub fn new_endpoints() -> (Endpoint<T>, Endpoint<T>) {
+  pub fn new() -> (Endpoint<T>, Endpoint<T>) {
     let (tx, rx) = channel();
     let (tx2, rx2) = channel();
 
@@ -77,7 +77,7 @@ impl<T: Send> BiChannel<T> {
 
   pub fn new() -> BiChannel<T> {
 
-    let (e1, e2) = Endpoint::new_endpoints();
+    let (e1, e2) = Endpoint::new();
 
     BiChannel {
       e1: e1,
