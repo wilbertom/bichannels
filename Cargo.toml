@@ -1,0 +1,9 @@
+[package]
+
+name = "bichannels"
+version = "0.0.1"
+authors = ["Wilberto Morales <wilbertomorales777@gmail.com>"]
+
+[lib]
+name = "bichannels"
+path = "src/lib.rs"
