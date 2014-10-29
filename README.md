@@ -34,5 +34,5 @@ fn main() {
 
 # Unstable
 
-This library is unstable because, channels themselves
+This library is unstable because channels themselves
 are unstable in Rust.
