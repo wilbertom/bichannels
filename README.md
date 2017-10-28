@@ -19,20 +19,15 @@ We call these ends Endpoints.
 extern crate bichannels;
 
 fn main() {
-    let bichannels::BiChannel{e1:e1, e2:e2} = bichannels::BiChannel::new();
+let bichannels::BiChannel{e1:e1, e2:e2} = bichannels::BiChannel::new();
 
-    spawn(proc(){
-      e2.send("Hello");
-      let r = e2.recv();
-      println!("Endpoint 2 got: {}", r);
-    });
+spawn(proc(){
+e2.send("Hello");
+let r = e2.recv();
+println!("Endpoint 2 got: {}", r);
+});
 
-    println!("Endpoint 1 got: {}", e1.recv());
-    e1.send("Oh, hai.");
+println!("Endpoint 1 got: {}", e1.recv());
+e1.send("Oh, hai.");
 }
 ```
-
-# Unstable
-
-This library is unstable because channels themselves
-are unstable in Rust.
